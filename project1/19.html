@@ -86,6 +86,15 @@
         table {
             width: 100%;
         }
+        #photos {
+            z-index: 1;
+            position: absolute;
+            top: 10px;
+        }
+        #header, #menu {
+            z-index: 2;
+            position: relative;
+        }
     </style>
 </head>
 <body>
@@ -110,59 +119,55 @@
     </div>
     <div class="container" id="menu">
         <h3>Menu</h3>
+        <h3>Appetizers</h3>
+            <p>Spring Rolls</p>
+            <p>Chicken Satay</p>
+            <p>Beef Bao</p>
+        <h3>Entrees</h3>
         <details>
-            <summary><i>Appetizers</i></summary>
-            <ul>
-                <li>Spring Rolls <img></li>
-                <li>Chicken Satay</li>
-                <li>Beef Bao</li>
-            </ul>
+            <summary>Banh Mi*</summary>
+                <ul>
+                    <li>Banh Mi Thit</li>
+                    <li>Banh Mi Ga</li>
+                    <li>Banh Mi Xi Mai</li>
+                    <li>Banh Mi Thit Nuong</li>
+                </ul>
         </details>
         <details>
-            <summary><i>Pho</i></summary>
-            <ul>
-                <li>Pho Tai</li>
-                <li>Pho Bo Vein</li>
-                <li>Pho Ga</li>
-            </ul>
+            <summary>Pho*</summary>
+                <ul>
+                    <li>Pho Tai</li>
+                    <li>Pho Bo Vein</li>
+                    <li>Pho Ga</li>
+                    <li>Pho Tai Bo Vein</li>
+                    <li>Pho Tom</li>
+                    <li>Pho Dac Biet</li>
+                </ul>
         </details>
         <details>
-            <summary><i>Mi</i></summary>
-            <ul>
-                <li>Mi Tuoi</li>
-                <li>Hoanh Thanh Mi</li>
-                <li>Mi Bo Kho</li>
-                <li>Mi Viet Tiem</li>
-            </ul>
+            <summary>Bun*</summary>
+                <ul>
+                    <li>Bun Bo Hue</li>
+                    <li>Bun Rieu</li>
+                    <li>Bun Suong</li>
+                    <li>Bun Nuoc Leo</li>
+                </ul>
         </details>
         <details>
-            <summary><i>Desserts & Beverages</i></summary>
-            <ul>
-                <li>Mango Rice</li>
-                <li>Iced Coffee</li>
-                <li>Milk Tea</li>
-            </ul>
+            <summary>Mi*</summary>
+                <ul>
+                    <li>Mi Tuoi</li>
+                    <li>Hoanh Thanh Mi</li>
+                    <li>Mi Bo Kho</li>
+                    <li>Mi Viet Tiem</li>
+                </ul>
         </details>
-    </div>
-    <div class="container"id="photos">
-        <br>
-        <table>
-            <tr>
-                <td><img src="../media/springrolls.jpg" alt="Spring Rolls" height="200" width="150"/></td>
-                <td><img src="../media/chickensatay.jpg" alt="Chicken Satay" height="200" width="150"/></td>
-                <td><img src="../media/beefbao.jpg" alt="Beef Bao" height="200" width="150"/></td>
-            </tr>
-            <tr>
-                <td><img src="../media/banhmi.jpg" alt="Banh Mi" height="200" width="150"/></td>
-                <td><img src="../media/pho.jpg" alt="Pho" height="200" width="150"/></td>
-                <td><img src="../media/bunrieu.jpg" alt="Bun Rieu" height="200" width="150"/></td>
-            </tr>
-            <tr>
-                <td><img src="../media/mangorice.jpg" alt="Mango Rice" height="200" width="150"/></td>
-                <td><img src="../media/icecoffee.jpg" alt="Iced Coffee" height="200" width="150"/></td>
-                <td><img src="../media/milktea.jpg" alt="Milk Tea" height="200" width="150"/></td>
-            </tr>
-        </table>
+        <h3>Desserts</h3>
+            <p>Mango Sticky Rice</p>
+        <h3>Beverages</h3>
+            <p>Soda</p>
+            <p>Tea</p>
+            <p>Coffee</p>
     </div>
 </body>
 </html>

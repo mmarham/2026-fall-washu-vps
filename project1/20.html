@@ -4,8 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #e0d8d8;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 1in;
+            font-family:  Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+            text-align: center;
+            line-height: 30px;
+        }
+        em {
+            color: #740501;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-style: oblique;
+            white-space: nowrap;
+        }
+        #menu {
+            font-family: Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+            text-align: center;
+        }
+        h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+            color: #740501;
+        }
+        h3 {
+            font-size: 25px;
+            text-transform: uppercase;
+            font-style: oblique;
+        }
+        p {
+            font-size: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-style: oblique;
+            white-space: nowrap;
+        }
+        #mailee {
+            position: absolute;
+            text-align: center;
+            top: 35px;
+            width: 100%;
+            text-transform: uppercase;
+            color: #740501;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+        }
+        ul {
+            list-style: none;
+            text-align: center;
+            padding: 0;
+        }
+        summary {
+            margin: 10px;
+            font-size: 15px;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: underline;
+            font-style: oblique;
+            list-style: none;
+        }
+        li {
+            font-size: 12px;
+            text-align: center;
+            text-transform: lowercase;
+            font-style: oblique;
+            line-height: 30px;
+        }
+        .item {
+            width: 100%;
+        }
+        table {
+            width: 100%;
+        }
+        #photos {
+            z-index: 1;
+            position: absolute;
+            top: 10px;
+        }
+        #header, #menu {
+            z-index: 2;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container" id="header">
+        <div class="item">
+            <table>
+            <tr>
+                <td><img src="../media/mllogo.jpg" alt="Mai Lee Logo" height="100"/></td>
+                <td>
+                    <span>8396 Musick Memorial Dr, Brentwood, 63144</span>
+                    <hr>
+                    <span>(314) 645-2835</span>
+                </td>
+            </tr>
+        </table>
+        </div>
+        <div class="item">
+            <hr>
+            <p><em>Hearty portions of Vietnamese & Chinese staples served in a simple but cheerful setting.</em></p>
+            <hr>
+        </div>
+    </div>
+    <div class="container" id="menu">
+        <h3>Menu</h3>
+        <h3>Appetizers</h3>
+            <p>Spring Rolls</p>
+            <p>Chicken Satay</p>
+            <p>Beef Bao</p>
+        <h3>Entrees</h3>
+        <details>
+            <summary>Banh Mi*</summary>
+                <ul>
+                    <li>Banh Mi Thit</li>
+                    <li>Banh Mi Ga</li>
+                    <li>Banh Mi Xi Mai</li>
+                    <li>Banh Mi Thit Nuong</li>
+                </ul>
+        </details>
+        <details>
+            <summary>Pho*</summary>
+                <ul>
+                    <li>Pho Tai</li>
+                    <li>Pho Bo Vein</li>
+                    <li>Pho Ga</li>
+                    <li>Pho Tai Bo Vein</li>
+                    <li>Pho Tom</li>
+                    <li>Pho Dac Biet</li>
+                </ul>
+        </details>
+        <details>
+            <summary>Bun*</summary>
+                <ul>
+                    <li>Bun Bo Hue</li>
+                    <li>Bun Rieu</li>
+                    <li>Bun Suong</li>
+                    <li>Bun Nuoc Leo</li>
+                </ul>
+        </details>
+        <details>
+            <summary>Mi*</summary>
+                <ul>
+                    <li>Mi Tuoi</li>
+                    <li>Hoanh Thanh Mi</li>
+                    <li>Mi Bo Kho</li>
+                    <li>Mi Viet Tiem</li>
+                </ul>
+        </details>
+        <h3>Desserts</h3>
+            <p>Mango Sticky Rice</p>
+        <h3>Beverages</h3>
+            <p>Soda</p>
+            <p>Tea</p>
+            <p>Coffee</p>
+    </div>
 </body>
 </html>
