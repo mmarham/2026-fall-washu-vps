@@ -5,169 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            background-color: #e0d8d8;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            font-size: 1in;
-            font-family:  Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-            text-align: center;
-            line-height: 30px;
-        }
-        em {
-            color: #740501;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-style: oblique;
-            white-space: nowrap;
-        }
-        #menu {
-            font-family: Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-            text-align: center;
-        }
-        h2 {
-            font-size: 45px;
-            text-transform: uppercase;
-            color: #740501;
-        }
-        h3 {
-            font-size: 25px;
-            text-transform: uppercase;
-            font-style: oblique;
-        }
-        p {
-            font-size: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: underline;
-            font-style: oblique;
-            white-space: nowrap;
-        }
-        #mailee {
-            position: absolute;
-            text-align: center;
-            top: 35px;
-            width: 100%;
-            text-transform: uppercase;
-            color: #740501;
+        body{
+            background-color: rgb(255, 245, 232);
         }
         .container {
             display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .item {
+            width: 50%;
+            text-align: center;
+        }
+        #menu {
             width: 100%;
-            justify-content: center;
-            flex-direction: column;
+            font-family: Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        }
+        #header {
+            text-align: center;
+            font-family: Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+        }
+        #footer {
+            text-align: center;
+            font-family: Avant Garde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+            margin-top: 40px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 100px;
+            line-height: 10px;
+            color: rgb(192, 63, 63);
+        }
+        h2 {
+            text-align: center;
+            font-size: 50px;
+            line-height: 10px;
+        }
+        h3 {
+            font-size: 30px;
+        }
+        h4 {
+            font-weight: normal;
+            font-style: italic;
+            font-size: 20px;
+        }
+        h5 {
+            font-weight: normal;
+            font-style: italic;
+            font-size: 15px;
         }
         ul {
             list-style: none;
-            text-align: center;
-            padding: 0;
-        }
-        summary {
-            margin: 10px;
-            font-size: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            text-decoration: underline;
-            font-style: oblique;
-            list-style: none;
-        }
-        li {
-            font-size: 12px;
-            text-align: center;
-            text-transform: lowercase;
-            font-style: oblique;
+            padding: 0px;
+            margin: 0px;
             line-height: 30px;
         }
-        .item {
-            width: 100%;
+        span {
+            font-size: 15px;
         }
-        table {
-            width: 100%;
+
+        @media screen and (max-width: 500px) {
+            .container {
+                flex-direction: column;
+            }
         }
-        #photos {
-            z-index: 1;
-            position: absolute;
-            top: 10px;
+
+        #pho:hover ~ #phodesc {
+            color: red;
+            animation-name: popup;
+            animation-duration: 10s;
+            
         }
-        #header, #menu {
-            z-index: 2;
-            position: relative;
+
+        #phodesc {
+            position: fixed;
+            left: 50%;
+            width: auto;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
         }
+
+        #bun:hover ~ #bundesc {
+            color: red;
+            animation-name: popup;
+            animation-duration: 10s;
+            
+        }
+
+        #bundesc {
+            position: fixed;
+            left: 50%;
+            width: auto;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #mi:hover ~ #midesc {
+            color: red;
+            animation-name: popup;
+            animation-duration: 10s;
+            
+        }
+
+        #midesc {
+            position: fixed;
+            left: 50%;
+            width: auto;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            opacity: 0;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        @keyframes popup {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="container" id="header">
-        <div class="item">
-            <table>
-            <tr>
-                <td><img src="../media/mllogo.jpg" alt="Mai Lee Logo" height="100"/></td>
-                <td>
-                    <span>8396 Musick Memorial Dr, Brentwood, 63144</span>
-                    <hr>
-                    <span>(314) 645-2835</span>
-                </td>
-            </tr>
-        </table>
-        </div>
-        <div class="item">
-            <hr>
-            <p><em>Hearty portions of Vietnamese & Chinese staples served in a simple but cheerful setting.</em></p>
-            <hr>
-        </div>
+    <div id="header">
+        <h1>Mai Lee</h1>
+        <hr>
+        <h5>Hearty portions of Vietnamese & Chinese staples served in a simple but cheerful setting.</h5>
+        <hr>
+        <h2>Menu</h2>
+        <span><i>Hover over items with the * for more information!</i></span>
     </div>
+
     <div class="container" id="menu">
-        <h3>Menu</h3>
-        <h3>Appetizers</h3>
-            <p>Spring Rolls</p>
-            <p>Chicken Satay</p>
-            <p>Beef Bao</p>
-        <h3>Entrees</h3>
-        <details>
-            <summary>Banh Mi*</summary>
+        <div class="item">
+            <h3>Appetizers</h3>
                 <ul>
-                    <li>Banh Mi Thit</li>
-                    <li>Banh Mi Ga</li>
-                    <li>Banh Mi Xi Mai</li>
-                    <li>Banh Mi Thit Nuong</li>
+                    <li>Banh Bao</li>
+                    <li>Bi Cuon</li>
+                    <li>Goi Du Du</li>
+                    <li>Ga Lui</li>
+                    <li>Bo Lui</li>
                 </ul>
-        </details>
-        <details>
-            <summary>Pho*</summary>
+            <h3>Desserts</h3>
                 <ul>
-                    <li>Pho Tai</li>
-                    <li>Pho Bo Vein</li>
-                    <li>Pho Ga</li>
-                    <li>Pho Tai Bo Vein</li>
-                    <li>Pho Tom</li>
-                    <li>Pho Dac Biet</li>
+                    <li>Mango Sticky Rice</li>
+                    <li>Che Ba Mau</li>
+                    <li>Che Dau Do</li>
+                    <li>Che Thai</li>
                 </ul>
-        </details>
-        <details>
-            <summary>Bun*</summary>
+            <h3>Beverages</h3>
                 <ul>
-                    <li>Bun Bo Hue</li>
-                    <li>Bun Rieu</li>
-                    <li>Bun Suong</li>
-                    <li>Bun Nuoc Leo</li>
+                    <li>Soft Drinks</li>
+                    <li>Iced Tea</li>
+                    <li>Hot Tea</li>
+                    <li>Iced Coffee</li>
+                    <li>Hot Coffee</li>
+                    <li>Thai Iced Tea</li>
                 </ul>
-        </details>
-        <details>
-            <summary>Mi*</summary>
-                <ul>
-                    <li>Mi Tuoi</li>
-                    <li>Hoanh Thanh Mi</li>
-                    <li>Mi Bo Kho</li>
-                    <li>Mi Viet Tiem</li>
-                </ul>
-        </details>
-        <h3>Desserts</h3>
-            <p>Mango Sticky Rice</p>
-        <h3>Beverages</h3>
-            <p>Soda</p>
-            <p>Tea</p>
-            <p>Coffee</p>
+        </div>
+        <div class="item">
+            <h3>Entrees</h3>
+                <h4>Banh Mi</h4>
+                    <ul>
+                        <li>Banh Mi Thit</li>
+                        <li>Banh Mi Ga</li>
+                        <li>Banh Mi Xi Mai</li>
+                        <li>Banh Mi Thit Nuong</li>
+                    </ul>
+                <h4 id="pho">Pho*</h4>
+                    <ul>
+                        <li>Pho Tai</li>
+                        <li>Pho Bo Vein</li>
+                        <li>Pho Ga</li>
+                        <li>Pho Tai Bo Vein</li>
+                        <li>Pho Tom</li>
+                        <li>Pho Dac Biet</li>
+                    </ul>
+                <h4 id="bun">Bun*</h4>
+                    <ul>
+                        <li>Bun Bo Hue</li>
+                        <li>Bun Rieu</li>
+                        <li>Bun Suong</li>
+                        <li>Bun Nuoc Leo</li>
+                    </ul>
+                <h4 id="mi">Mi*</h4>
+                    <ul>
+                        <li>Mi Tuoi</li>
+                        <li>Hoanh Thanh Mi</li>
+                        <li>Mi Bo Kho</li>
+                        <li>Mi Viet Tiem</li>
+                    </ul>
+                <p id="phodesc">Classic Vietnamese bone broth soup with aromatic spices and fresh herbs</p>
+                <p id="bundesc">Vietnamese broth soup with vermicelli noodles</p>
+                <p id="midesc">Vietnamese broth soup with egg noodles</p>
+        </div>        
+    </div>
+    <div id="footer">
+        <hr>
+        <h5>Contact us at <b>(314) 645-2835</b></h5>
+        <h5>Located at <b>8396 Musick Memorial Dr, Brentwood, 63144</b></h5>
+        <iframe iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.523974031309!2d-90.34008028788247!3d38.62749997166525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8cb1e26415641%3A0x78521f33bbc1be29!2sMai%20Lee!5e1!3m2!1sen!2sus!4v1789658132366!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
 </body>
 </html>
