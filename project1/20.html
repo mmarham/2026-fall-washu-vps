@@ -12,6 +12,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            flex-wrap: wrap;
         }
         .item {
             width: 50%;
@@ -44,6 +45,8 @@
         }
         h3 {
             font-size: 30px;
+            line-height: 10px;
+            margin-top: 40px;
         }
         h4 {
             font-weight: normal;
@@ -155,6 +158,7 @@
     <div class="container" id="menu">
         <div class="item">
             <h3>Appetizers</h3>
+                <hr>
                 <ul>
                     <li>Banh Bao</li>
                     <li>Bi Cuon</li>
@@ -163,6 +167,7 @@
                     <li>Bo Lui</li>
                 </ul>
             <h3>Desserts</h3>
+                <hr>
                 <ul>
                     <li>Mango Sticky Rice</li>
                     <li>Che Ba Mau</li>
@@ -170,6 +175,7 @@
                     <li>Che Thai</li>
                 </ul>
             <h3>Beverages</h3>
+                <hr>
                 <ul>
                     <li>Soft Drinks</li>
                     <li>Iced Tea</li>
@@ -181,6 +187,7 @@
         </div>
         <div class="item">
             <h3>Entrees</h3>
+                <hr>
                 <h4>Banh Mi</h4>
                     <ul>
                         <li>Banh Mi Thit</li>
@@ -214,7 +221,29 @@
                 <p id="phodesc">Classic Vietnamese bone broth soup with aromatic spices and fresh herbs</p>
                 <p id="bundesc">Vietnamese broth soup with vermicelli noodles</p>
                 <p id="midesc">Vietnamese broth soup with egg noodles</p>
-        </div>        
+        </div>
+        <div id="phototable">
+            <br>
+            <hr>
+            <table>
+                <tr>
+                    <td><img src="../media/springrolls.jpg" alt="Spring Rolls" height="200" width="150"/></td>
+                    <td><img src="../media/chickensatay.jpg" alt="Chicken Satay" height="200" width="150"/></td>
+                    <td><img src="../media/beefbao.jpg" alt="Beef Bao" height="200" width="150"/></td>
+                </tr>
+                <tr>
+                    <td><img src="../media/banhmi.jpg" alt="Banh Mi" height="200" width="150"/></td>
+                    <td><img src="../media/pho.jpg" alt="Pho" height="200" width="150"/></td>
+                    <td><img src="../media/bunrieu.jpg" alt="Bun Rieu" height="200" width="150"/></td>
+                </tr>
+                <tr>
+                    <td><img src="../media/mangorice.jpg" alt="Mango Rice" height="200" width="150"/></td>
+                    <td><img src="../media/icecoffee.jpg" alt="Che Bao Banh" height="200" width="150"/></td>
+                    <td><img src="../media/milktea.jpg" alt="Banh Flan" height="200" width="150"/></td>
+                </tr>
+            </table>
+            <hr>
+        </div> 
     </div>
     <div id="footer">
         <hr>
