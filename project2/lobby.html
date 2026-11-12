@@ -120,6 +120,32 @@
             text-decoration: underline;
             text-underline-offset: 0.1em;
         }
+        .back-link {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .back-link:hover span,
+        .back-link:focus-visible span {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -141,5 +167,6 @@
             <span class="dot" aria-hidden="true"></span>
         </a>
     </div>
+    <a class="back-link" href="home.html"><span>BACK?</span></a>
 </body>
 </html>

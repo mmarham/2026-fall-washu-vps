@@ -36,11 +36,121 @@
         .dot-hover-area:focus-visible .dot {
             opacity: 1;
         }
+        .painting-position {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: max(100vw, calc(100vh * 1834 / 1098));
+            height: max(100vh, calc(100vw * 1098 / 1834));
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .painting-dot {
+            position: absolute;
+            top: 50%;
+            left: 36%;
+            right: auto;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            border: 0;
+            background: transparent;
+            pointer-events: auto;
+        }
+
+        .artwork-modal {
+            padding: 0;
+            border: 0;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: transparent;
+            color: white;
+        }
+
+        .artwork-modal::backdrop {
+            background: rgb(0 0 0 / 85%);
+        }
+
+        .artwork-modal figure {
+            margin: 0;
+            width: min-content;
+        }
+
+        .artwork-modal img {
+            display: block;
+            max-width: 85vw;
+            max-height: 70vh;
+            width: auto;
+            height: auto;
+        }
+
+        .artwork-modal figcaption {
+            margin-top: 20px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .artwork-back {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .artwork-back span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .artwork-back:hover span,
+        .artwork-back:focus-visible span {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
+    <div class="painting-position">
+        <button class="dot-hover-area painting-dot" type="button" aria-label="View The Ambassadors" aria-haspopup="dialog">
+            <span class="dot" aria-hidden="true"></span>
+        </button>
+    </div>
     <a class="dot-hover-area" href="15.html" aria-label="Go back to the previous view">
         <span class="dot" aria-hidden="true"></span>
     </a>
+    <dialog class="artwork-modal" aria-labelledby="artwork-caption">
+        <figure>
+            <img src="media/ambassadors.webp" alt="The Ambassadors">
+            <figcaption id="artwork-caption">The ambassadors - hans volbein</figcaption>
+        </figure>
+        <button class="artwork-back" type="button"><span>BACK?</span></button>
+    </dialog>
+    <script>
+        const paintingDot = document.querySelector('.painting-dot');
+        const artworkModal = document.querySelector('.artwork-modal');
+
+        paintingDot.addEventListener('click', () => artworkModal.showModal());
+        document.querySelector('.artwork-back').addEventListener('click', () => artworkModal.close());
+        artworkModal.addEventListener('click', (event) => {
+            if (event.target === artworkModal) {
+                artworkModal.close();
+            }
+        });
+    </script>
 </body>
 </html>
