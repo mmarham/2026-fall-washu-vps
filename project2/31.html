@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+
+        .room {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: max(100vw, calc(100vh * 1834 / 1098));
+            height: max(100vh, calc(100vw * 1098 / 1834));
+            transform: translate(-50%, -50%);
+            background: url("media/31.jpg") center / cover no-repeat;
+        }
+
+        .room::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: black;
+            pointer-events: none;
+            animation: dim-lights 3s ease 0.5s both;
+        }
+
+        @keyframes dim-lights {
+            from { opacity: 0; }
+            to { opacity: 0.85; }
+        }
+
+        .movie-screen {
+            position: absolute;
+            z-index: 1;
+            top: 18%;
+            left: 16%;
+            width: 68%;
+            aspect-ratio: 16 / 9;
+            object-fit: contain;
+            background: black;
+            box-shadow: 0 0 0 6px #111, 0 12px 30px #0005;
+        }
+        .continue-link {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: min(320px, 100vw);
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .continue-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .continue-link:hover span,
+        .continue-link:focus-visible span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="room">
+        <video class="movie-screen" autoplay muted loop playsinline controls aria-label="Tenet trailer">
+            <source src="media/TENET - Official Trailer - Warner Bros. (1080p).mp4" type="video/mp4">
+            Your browser does not support video playback.
+        </video>
+    </div>
+    <a class="continue-link" href="lobby.html"><span>CONTINUE?</span></a>
+</body>
+</html>
