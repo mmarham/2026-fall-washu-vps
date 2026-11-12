@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url("media/24.jpg") center / cover no-repeat fixed;
+        }
+        .title-link {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: min(1000px, 90vw);
+            height: 200px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #334477;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .title-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .title-link:hover span,
+        .title-link:focus-visible span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <audio id="ocean-audio" autoplay loop hidden>
+        <source src="media/ocean.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const oceanAudio = document.getElementById("ocean-audio");
+        function startOceanAudio() {
+            oceanAudio.play().then(() => {
+                document.removeEventListener("pointerdown", startOceanAudio);
+                document.removeEventListener("keydown", startOceanAudio);
+            }).catch(() => {});
+        }
+        document.addEventListener("pointerdown", startOceanAudio);
+        document.addEventListener("keydown", startOceanAudio);
+        startOceanAudio();
+    </script>
+    <a class="title-link" href="25.html">
+        <span>MARINE CITY - KIYONORI KIKUTAKE</span>
+    </a>
+</body>
+</html>

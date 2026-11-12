@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url("media/6.jpg") center / cover no-repeat fixed;
+        }
+        .dot-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: max(100vw, calc(100vh * 1834 / 1098));
+            height: max(100vh, calc(100vw * 1098 / 1834));
+            pointer-events: none;
+        }
+
+        .dot-hover-area {
+            position: absolute;
+            top: 49.5%;
+            left: 50.2%;
+            width: 200px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .dot-hover-area:hover .dot,
+        .dot-hover-area:focus-visible .dot {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="dot-container">
+        <a class="dot-hover-area" href="7.html" aria-label="Go through the doorway">
+            <span class="dot" aria-hidden="true"></span>
+        </a>
+    </div>
+</body>
+</html>

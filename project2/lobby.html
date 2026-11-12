@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("media/4.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .dot-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Match the background's cover sizing to keep dots on the doorways. */
+            width: max(100vw, calc(100vh * 1834 / 1098));
+            height: max(100vh, calc(100vw * 1098 / 1834));
+            pointer-events: none;
+        }
+
+        .dot-hover-area {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: auto;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .dot-hover-area:hover .dot,
+        .dot-hover-area:focus-visible .dot {
+            opacity: 1;
+        }
+
+        .back-left-dot {
+            left: 18.1%;
+            top: 53.2%;
+            cursor: pointer;
+        }
+
+        .right-door-dot {
+            left: 76.1%;
+            top: 52.3%;
+            cursor: pointer;
+        }
+        .contents {
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(900px, 58vw);
+            padding: 24px 0;
+            color: black;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: clamp(18px, 2vw, 32px);
+            font-weight: bold;
+            line-height: 1.3;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .contents h2 {
+            margin: 0 0 16px;
+            font-size: 1.2em;
+        }
+
+        .contents ol {
+            width: fit-content;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            text-align: left;
+        }
+
+        .contents h2,
+        .contents ol {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .contents:hover h2,
+        .contents:focus-within h2,
+        .contents:hover ol,
+        .contents:focus-within ol {
+            opacity: 1;
+        }
+
+        .contents a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contents a:hover,
+        .contents a:focus-visible {
+            text-decoration: underline;
+            text-underline-offset: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="contents" aria-label="Table of contents">
+        <h2>Directory</h2>
+        <ol>
+            <li><a href="10.html">1. Toe</a></li>
+            <li><a href="11.html">2. Eye</a></li>
+            <li><a href="15.html">3. Memento mori</a></li>
+            <li><a href="24.html">4. Marine city</a></li>
+            <li>5. Tenet</li>
+        </ol>
+    </nav>
+    <div class="dot-container">
+        <a class="dot-hover-area back-left-dot" href="12.html" aria-label="Go through the back-left doorway">
+            <span class="dot" aria-hidden="true"></span>
+        </a>
+        <a class="dot-hover-area right-door-dot" href="5.html" aria-label="Go through the right doorway">
+            <span class="dot" aria-hidden="true"></span>
+        </a>
+    </div>
+</body>
+</html>

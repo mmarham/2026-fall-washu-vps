@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url("media/11.jpg") center / cover no-repeat fixed;
+        }
+        .artwork {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            width: min(750px, 80vw, calc(70vh * 615 / 475));
+        }
+
+        .center-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .artwork figcaption {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            margin-bottom: 20px;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+        }
+        .back-link {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .back-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .back-link:hover span,
+        .back-link:focus-visible span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <figure class="artwork">
+        <figcaption>EYE OF SILENCE - MAX ERNST</figcaption>
+        <img class="center-image" src="media/eye.jpg" alt="Eye of Silence by Max Ernst">
+    </figure>
+    <a class="back-link" href="lobby.html"><span>BACK?</span></a>
+</body>
+</html>

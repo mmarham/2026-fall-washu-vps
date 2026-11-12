@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url("media/25.jpg") center / cover no-repeat fixed;
+        }
+        .dot-hover-area {
+            position: fixed;
+            top: 50%;
+            width: 200px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .left-dot { left: 25%; }
+        .right-dot { left: 75%; }
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .dot-hover-area:hover .dot,
+        .dot-hover-area:focus-visible .dot {
+            opacity: 1;
+        }
+        .back-link {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .back-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .back-link:hover span,
+        .back-link:focus-visible span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <audio id="ocean-audio" autoplay loop hidden>
+        <source src="media/ocean.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const oceanAudio = document.getElementById("ocean-audio");
+        function startOceanAudio() {
+            oceanAudio.play().then(() => {
+                document.removeEventListener("pointerdown", startOceanAudio);
+                document.removeEventListener("keydown", startOceanAudio);
+            }).catch(() => {});
+        }
+        document.addEventListener("pointerdown", startOceanAudio);
+        document.addEventListener("keydown", startOceanAudio);
+        startOceanAudio();
+    </script>
+    <a class="dot-hover-area left-dot" href="26.html" aria-label="Go to the left view"><span class="dot" aria-hidden="true"></span></a>
+    <a class="dot-hover-area right-dot" href="27.html" aria-label="Go to the right view"><span class="dot" aria-hidden="true"></span></a>
+    <a class="back-link" href="lobby.html"><span>BACK?</span></a>
+</body>
+</html>

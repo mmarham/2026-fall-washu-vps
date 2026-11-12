@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow: hidden;
+            background: url("media/19.jpg") center / cover no-repeat fixed;
+        }
+        .enter-link {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(400px, 100vw);
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 45px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .enter-link span {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .enter-link:hover span,
+        .enter-link:focus-visible span {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <a class="enter-link" href="20.html"><span>ENTER?</span></a>
+</body>
+</html>

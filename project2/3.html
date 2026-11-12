@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("media/4.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .dot-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Match the background's cover sizing to keep dots on the doorways. */
+            width: max(100vw, calc(100vh * 1834 / 1098));
+            height: max(100vh, calc(100vw * 1098 / 1834));
+            pointer-events: none;
+        }
+
+        .dot-hover-area {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            pointer-events: auto;
+        }
+
+        .dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: black;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .dot-hover-area:hover .dot,
+        .dot-hover-area:focus-visible .dot {
+            opacity: 1;
+        }
+
+        .back-left-dot {
+            left: 18.1%;
+            top: 53.2%;
+        }
+
+        .right-door-dot {
+            left: 76.1%;
+            top: 52.3%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="dot-container">
+        <div class="dot-hover-area back-left-dot">
+            <span class="dot" role="img" aria-label="Back-left doorway"></span>
+        </div>
+        <a class="dot-hover-area right-door-dot" href="5.html" aria-label="Go through the right doorway">
+            <span class="dot" aria-hidden="true"></span>
+        </a>
+    </div>
+</body>
+</html>
